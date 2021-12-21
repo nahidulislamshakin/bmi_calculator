@@ -8,6 +8,23 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  var activeCardColor = Color(0xFF26294D);
+  var inActiveColor = Color(0xFF155328);
+  final bottomactiveColor = Color(0xFFE5005D);
+  var maleCardActiveColor = activeCardColor;
+  final maleCardInActiveColor = inActiveCardColor;
+  // static var activeCardColor;
+  // static var inActiveCardColor;
+
+  void updateColor(int Gender) {
+    if (Gender == 1) {
+      if (maleCardInActiveColor == inActiveCardColor) {
+        maleCardActiveColor = activeCardColor;
+      } else
+        maleCardActiveColor = inActiveCardColor;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -27,9 +44,13 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          updateColor(1);
+                        });
+                      },
                       child: container(
-                        colors: Color(0xFF26294D),
+                        colors: maleCardInActiveColor,
                         iconContent: iconcontents(
                             icon: FontAwesomeIcons.venus, label: 'Male'),
                       ),
