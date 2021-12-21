@@ -19,8 +19,10 @@ class _MainPageState extends State<MainPage> {
     if (Gender == 1) {
       if (maleCardColor == inActiveCardColor) {
         maleCardColor = activeCardColor;
-      } else if (maleCardColor == activeCardColor)
+        femaleCardColor = inActiveCardColor;
+      } else if (maleCardColor == activeCardColor) {
         maleCardColor = inActiveCardColor;
+      }
     }
   }
 
@@ -28,6 +30,7 @@ class _MainPageState extends State<MainPage> {
     if (Gender == 2) {
       if (femaleCardColor == inActiveCardColor) {
         femaleCardColor = activeCardColor;
+        maleCardColor = inActiveCardColor;
       } else if (femaleCardColor == activeCardColor)
         femaleCardColor = inActiveCardColor;
     }
