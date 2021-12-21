@@ -3,38 +3,33 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './reusable_widget.dart';
 
 class MainPage extends StatefulWidget {
-
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-    var activeCardColor = Color(0xFF155328);
-  var inActiveCardColor = Color(0xFF155328);
-  
+  var activeCardColor = Color(0xFF155328);
+  var inActiveCardColor = Color(0xFF272B4E);
 
-  var bottomactiveColor = Color(0xFFE5005D);
+  var maleCardColor = Color(0xFF272B4E);
 
-  var maleCardActiveColor = Color(0xFF26294D);
-  var maleCardInActiveColor = Color(0xFF155328);
-  // static var activeCardColor;
-  // static var inActiveCardColor;
+  var femaleCardColor = Color(0xFF272B4E);
 
   void updateColor(int Gender) {
     if (Gender == 1) {
-      if (maleCardInActiveColor == inActiveCardColor) {
-        maleCardActiveColor = activeCardColor;
-      } else
-        maleCardActiveColor = inActiveCardColor;
+      if (maleCardColor == inActiveCardColor) {
+        maleCardColor = activeCardColor;
+      } else if (maleCardColor == activeCardColor)
+        maleCardColor = inActiveCardColor;
     }
   }
 
   void updateColor2(int Gender) {
     if (Gender == 2) {
-      if (maleCardInActiveColor == inActiveCardColor) {
-        maleCardActiveColor = activeCardColor;
-      } else
-        maleCardActiveColor = inActiveCardColor;
+      if (femaleCardColor == inActiveCardColor) {
+        femaleCardColor = activeCardColor;
+      } else if (femaleCardColor == activeCardColor)
+        femaleCardColor = inActiveCardColor;
     }
   }
 
@@ -63,7 +58,7 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       child: container(
-                        colors: maleCardActiveColor,
+                        colors: maleCardColor,
                         iconContent: iconcontents(
                             icon: FontAwesomeIcons.venus, label: 'Male'),
                       ),
@@ -77,7 +72,7 @@ class _MainPageState extends State<MainPage> {
                       });
                     },
                     child: container(
-                      colors: Color(0xFF26294D),
+                      colors: femaleCardColor,
                       iconContent: iconcontents(
                           icon: FontAwesomeIcons.female, label: 'Female'),
                     ),
