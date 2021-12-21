@@ -3,21 +3,34 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './reusable_widget.dart';
 
 class MainPage extends StatefulWidget {
+
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  var activeCardColor = Color(0xFF26294D);
-  var inActiveColor = Color(0xFF155328);
-  final bottomactiveColor = Color(0xFFE5005D);
-  var maleCardActiveColor = activeCardColor;
-  final maleCardInActiveColor = inActiveCardColor;
+    var activeCardColor = Color(0xFF155328);
+  var inActiveCardColor = Color(0xFF155328);
+  
+
+  var bottomactiveColor = Color(0xFFE5005D);
+
+  var maleCardActiveColor = Color(0xFF26294D);
+  var maleCardInActiveColor = Color(0xFF155328);
   // static var activeCardColor;
   // static var inActiveCardColor;
 
   void updateColor(int Gender) {
     if (Gender == 1) {
+      if (maleCardInActiveColor == inActiveCardColor) {
+        maleCardActiveColor = activeCardColor;
+      } else
+        maleCardActiveColor = inActiveCardColor;
+    }
+  }
+
+  void updateColor2(int Gender) {
+    if (Gender == 2) {
       if (maleCardInActiveColor == inActiveCardColor) {
         maleCardActiveColor = activeCardColor;
       } else
@@ -50,17 +63,24 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       child: container(
-                        colors: maleCardInActiveColor,
+                        colors: maleCardActiveColor,
                         iconContent: iconcontents(
                             icon: FontAwesomeIcons.venus, label: 'Male'),
                       ),
                     ),
                   ),
                   Expanded(
-                      child: container(
-                    colors: Color(0xFF26294D),
-                    iconContent: iconcontents(
-                        icon: FontAwesomeIcons.female, label: 'Female'),
+                      child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        updateColor2(2);
+                      });
+                    },
+                    child: container(
+                      colors: Color(0xFF26294D),
+                      iconContent: iconcontents(
+                          icon: FontAwesomeIcons.female, label: 'Female'),
+                    ),
                   ))
                 ],
               ),
