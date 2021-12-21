@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import './reusable_widget.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,15 +26,18 @@ class MainPage extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: container(
-                      colors: Color(0xFF4C5065),
-                      iconContent: iconcontents(
-                          icon: FontAwesomeIcons.venus, label: 'Male'),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: container(
+                        colors: Color(0xFF26294D),
+                        iconContent: iconcontents(
+                            icon: FontAwesomeIcons.venus, label: 'Male'),
+                      ),
                     ),
                   ),
                   Expanded(
                       child: container(
-                    colors: Color(0xFF4C5065),
+                    colors: Color(0xFF26294D),
                     iconContent: iconcontents(
                         icon: FontAwesomeIcons.female, label: 'Female'),
                   ))
@@ -43,7 +52,7 @@ class MainPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: container(
-                      colors: Color(0xFF4C5065),
+                      colors: Color(0xFF26294D),
                     ),
                   ),
                 ],
@@ -57,10 +66,10 @@ class MainPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: container(
-                      colors: Color(0xFF4C5065),
+                      colors: Color(0xFF26294D),
                     ),
                   ),
-                  Expanded(child: container(colors: Color(0xFF4C5065)))
+                  Expanded(child: container(colors: Color(0xFF26294D)))
                 ],
               ),
             ),
@@ -72,48 +81,6 @@ class MainPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class iconcontents extends StatelessWidget {
-  final IconData icon;
-  final String label;
-
-  iconcontents({required this.icon, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 70,
-        ),
-        SizedBox(height: 8,),
-        Text(
-          '$label',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold ,color: Color(0xFFFFFFFF)),
-        )
-      ],
-    );
-  }
-}
-
-class container extends StatelessWidget {
-  final Color colors;
-  // final Icon iconContent;
-  final Widget? iconContent;
-  container({required this.colors, this.iconContent});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(5),
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(10), color: colors),
-      child: iconContent,
     );
   }
 }
