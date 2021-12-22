@@ -4,6 +4,7 @@ class iconcontents extends StatelessWidget {
   final IconData icon;
   final String label;
 
+
   iconcontents({required this.icon, required this.label});
 
   @override
@@ -32,7 +33,6 @@ class iconcontents extends StatelessWidget {
 
 class container extends StatelessWidget {
   final Color colors;
-  // final Icon iconContent;
   final Widget? iconContent;
   container({required this.colors, this.iconContent});
 
