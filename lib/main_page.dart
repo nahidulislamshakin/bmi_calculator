@@ -129,7 +129,9 @@ class _MainPageState extends State<MainPage> {
                             SliderTheme(
                               data: ThemeData().of(context).copyWith(
                                   RoundSliderThumbShape(enabledThumbRadius: 15),
-                                  Overlay(Color(0x292724AE))),
+                                  Overlay(Color(0x292724AE),
+                                  )
+                                  RoundSliderOverlayShape(overlayRadius: 24.0)),
                               child: Slider(
                                 value: _heightvalue,
                                 max: 300,
