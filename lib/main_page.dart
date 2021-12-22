@@ -126,16 +126,21 @@ class _MainPageState extends State<MainPage> {
                             SizedBox(
                               height: 5,
                             ),
-                            Slider(
-                              value: _heightvalue,
-                              max: 300,
-                              //   divisions: 5,
-                              // label: _value.round().toString(),
-                              onChanged: (double value) {
-                                setState(() {
-                                  _heightvalue = value;
-                                });
-                              },
+                            SliderTheme(
+                              data: ThemeData().of(context).copyWith(
+                                  RoundSliderThumbShape(enabledThumbRadius: 15),
+                                  Overlay(Color(0x292724AE))),
+                              child: Slider(
+                                value: _heightvalue,
+                                max: 300,
+                                //   divisions: 5,
+                                // label: _value.round().toString(),
+                                onChanged: (double value) {
+                                  setState(() {
+                                    _heightvalue = value;
+                                  });
+                                },
+                              ),
                             ),
                           ],
                         )),
@@ -178,8 +183,11 @@ class _MainPageState extends State<MainPage> {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
-                                                    Text('kg',style: TextStyle(
-                                      fontSize: 15, color: Colors.grey),),
+                            Text(
+                              'kg',
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.grey),
+                            ),
                           ],
                         ),
 
@@ -189,7 +197,6 @@ class _MainPageState extends State<MainPage> {
                             FloatingActionButton(
                               onPressed: () {
                                 setState(() {
-                                  
                                   _weightvalue--;
                                 });
                               },
