@@ -4,7 +4,6 @@ class iconcontents extends StatelessWidget {
   final IconData icon;
   final String label;
 
-
   iconcontents({required this.icon, required this.label});
 
   @override
@@ -16,12 +15,12 @@ class iconcontents extends StatelessWidget {
           icon,
           size: 70,
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Text(
           '$label',
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
               color: Color(0xFFFFFFFF)),
@@ -34,6 +33,7 @@ class iconcontents extends StatelessWidget {
 class container extends StatelessWidget {
   final Color colors;
   final Widget? iconContent;
+
   container({required this.colors, this.iconContent});
 
   @override

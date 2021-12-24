@@ -326,10 +326,12 @@ class goresult extends StatelessWidget {
   double agevalue;
   double weightvalue;
   double heightvalue;
+
   goresult(
       {required this.agevalue,
       required this.weightvalue,
       required this.heightvalue});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -342,7 +344,7 @@ class goresult extends StatelessWidget {
               builder: (context) => BMIresult(
                     age: agevalue,
                     weight: weightvalue,
-                    height: heightvalue,
+                    height: heightvalue / 100,
                   )),
         );
       },
