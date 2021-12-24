@@ -22,10 +22,10 @@ class BMIresult extends StatelessWidget {
     if (result < 18.5) {
       status = 'Under Weight';
       return status;
-    } else if (result > 18.5 && result < 24.9) {
+    } else if (result > 18.5 && result < 25) {
       status = 'Healthy';
       return status;
-    } else if (result > 24.9 && result < 29.9) {
+    } else if (result > 25 && result < 29.9) {
       status = 'Overweight';
       return status;
     } else {
@@ -75,7 +75,7 @@ class BMIresult extends StatelessWidget {
                   height: 10,
                 ),
                 const Text(
-                  '18.5 - 24.9 kg/m2',
+                  '18.5 - 25 kg/m2',
                   style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
                 const SizedBox(
