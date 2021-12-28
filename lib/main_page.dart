@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './reusable_widget.dart';
 import './bmi_result.dart';
+import './feet_to_cm.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -129,29 +130,27 @@ class _MainPageState extends State<MainPage> {
                           const SizedBox(
                             height: 5,
                           ),
+
                           // SliderTheme(
-                          //   data: ThemeData().of().copyWith(
-                          //       RoundSliderThumbShape(enabledThumbRadius: 15,)
+                          //   data: ThemeData().of().copywith(
+                          //       RoundSliderThumbShape(enabledThumbRadius: 15,),
                           //       Overlay(
                           //       Color(0x292724AE)),
                           //       RoundSliderOverlayShape(overlayRadius: 24.0)),
-                          //   child:
+                          // child:
                           Slider(
                             value: heightvalue,
-                            max: 300,
+                            min: 50,
+                            max: 220,
                             activeColor: const Color(0xFFFD0225),
                             inactiveColor: Colors.red.shade300,
                             onChanged: (double value) {
                               setState(() {
-                                if (value > 0) {
-                                  heightvalue = value;
-                                } else {
-                                  heightvalue = value + 1;
-                                }
+                                heightvalue = value;
                               });
                             },
                           ),
-                          //   ),
+                          feetPage(),
                         ],
                       ),
                     ),
@@ -239,7 +238,7 @@ class _MainPageState extends State<MainPage> {
                   //age container
                   Expanded(
                     child: container(
-                      colors: Color(0xFF26294D),
+                      colors: const Color(0xFF26294D),
                       iconContent: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -355,5 +354,21 @@ class goresult extends StatelessWidget {
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
       )),
     );
+  }
+}
+
+class feetPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return FlatButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => FeetToCm()));
+        },
+        child: Text(
+          'Feet to cm?',
+          style: TextStyle(fontSize: 25, color: Colors.white),
+        ));
   }
 }
