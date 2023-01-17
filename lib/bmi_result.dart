@@ -94,7 +94,7 @@ class BMIresult extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                FlatButton(
+                TextButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },

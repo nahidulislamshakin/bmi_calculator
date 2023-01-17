@@ -334,8 +334,8 @@ class goresult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return RaisedButton(
-      color: Color(0xFFFD0225),
+    return ElevatedButton(
+     // color: Color(0xFFFD0225),
       onPressed: () {
         Navigator.push(
           context,
@@ -361,14 +361,17 @@ class feetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return FlatButton(
+    return TextButton(
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => FeetToCm()));
         },
-        child: Text(
-          'Feet to cm?',
-          style: TextStyle(fontSize: 25, color: Colors.white),
+        child: Container(
+
+          child: Text(
+            'Feet to cm?',
+            style: TextStyle(fontSize: 25, color: Colors.white),
+          ),
         ));
   }
 }

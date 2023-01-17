@@ -102,7 +102,7 @@ class _FeetToCmState extends State<FeetToCm> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          RaisedButton(
+                          ElevatedButton(
                             onPressed: () {
                               submitData();
                             },
@@ -126,7 +126,7 @@ class _FeetToCmState extends State<FeetToCm> {
                   const SizedBox(
                     height: 30,
                   ),
-                  FlatButton(
+                  TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
